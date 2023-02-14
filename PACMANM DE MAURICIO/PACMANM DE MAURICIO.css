@@ -1,0 +1,68 @@
+body{
+    background:#1d2630;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+.pacman::before,
+.pacman::after{
+    content: " ";
+    position: absolute;
+    background: yellow;
+    width: 100px;
+    height: 50px;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius: 50px 50px 0 0;
+    animation: up 0.4s infinite;
+}
+
+.pacman::after{
+    margin-top: -1px;
+    border-radius: 0 0 50px 50px;
+    animation: down 0.4s infinite;
+}
+
+.comida{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin-top: -5px;
+    margin-left: 30px;
+    border-radius: 50%;
+    background: yellow;
+    box-shadow: 40px 0 0 rgb(228, 228, 223), 80px 0 0 rgb(228, 228, 223), 120px 0 0 rgb(228, 228, 223);
+    animation: right_to_left 0.4s infinite;
+}
+
+
+@keyframes up{
+    0%, 100%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes down{
+    0%, 100%{
+        transform: rotate(0);
+
+    }
+    50%{
+        transform: rotate(40deg);
+    }
+}
+
+@keyframes right_to_left{
+    100%{
+        margin-left: -10px;
+    }
+}
